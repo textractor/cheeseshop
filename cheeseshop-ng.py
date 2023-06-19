@@ -28,7 +28,10 @@ def cheeseshop_ng():
                'taleggio': 'It\'s not an Italian musical term!',
                'parmesan': 'Needs no introduction, it already has P-R!',
                'manchego': 'Don Quixote approved!',
-               'monterey jack': 'You don\'t know jack!'
+               'monterey jack': 'You don\'t know jack!',
+               'provolone': 'You\'re a pro at this!',
+               'cottage': 'A cheese with its own industry!',
+               'gruyere': 'This one grew there.'
     }
     
     responses = ['Sorry, sir, cat ate it.',
