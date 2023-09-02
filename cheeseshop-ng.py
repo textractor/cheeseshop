@@ -20,26 +20,27 @@ def cheeseshop_ng():
                'roquefort': 'There may very well be a fort there!',
                'camembert': 'You\'re almost there with ___!',
                'cotija': 'Un queso blanco de Mexico!',
-               'chevre': 'Oh this one\'s really a goat!',
+               'chevre': 'Oh this one\'s a real goat!',
                'feta': 'It\'s Greek to me!',
                'mozzarella': 'Bufala Bill might have liked this!',
                'emmental': 'Some end it tal, some taler!',
-               'gouda': 'Itsa very gooda cheese!',
+               'gouda': 'Itsa very good a cheese!',
                'taleggio': 'It\'s not an Italian musical term!',
                'parmesan': 'Needs no introduction, it already has P-R!',
                'manchego': 'Don Quixote approved!',
                'monterey jack': 'You don\'t know jack!'
     }
     
-    responses = ['Sorry, sir, cat ate it.',
-                 'Dried up into a brick sir. Mortared it into the wall there.',
-                 'Not a shred, sir.',
-                 'Afraid it got very runny, sir. Ran right out the door.',
-                 'Delivery van broke down, sir, should be in by tomorrow.',
-                 'That comes in every other Wednesday.',
+    responses = ['Sorry, cat ate it.',
+                 'Dried up into a brick. Mortared it into the wall there.',
+                 'Not a shred.',
+                 'Afraid it got very runny. Ran right out the door.',
+                 'Delivery van broke down, should be in by tomorrow.',
+                 'That comes in every other Wednesday if the month has a fifth Sunday.',
                  'Sold out this morning.',
-                 'Blimey, sir, is that really a cheese?!',
-                 'Yes, sir, we had a wheel\'s worth! Couple of very large mice bought the lot not 30 minutes ago.'
+                 'Blimey, is that really a cheese?!',
+                 'Yes, sir, we had a wheel\'s worth! Couple of very large mice bought the lot not 30 minutes ago.',
+                 'I believe there\'s a shortage due to the Swiss joining the war.'
     ]
 
     kind = 'wensleydale'
@@ -53,13 +54,13 @@ def cheeseshop_ng():
                 "(enter the name of a cheese, in lower case, or enter 'piss off' to exit) ... )" + '\n')
         # print bullseye for debug
         if kind == bullseye:  # The right cheese ....
-            print ('\n' + 'Why, yes, we\'ve got a bit, sir!' + '\n')
+            print ('\n' + 'Why, yes, we\'ve got a bit in stock!' + '\n')
             bullseye = choice(cheeses.keys())  # Choose a new cheese (same cheese may be chosen ... see note above.)
             print ">>> Today's Cheese:   " + cheeses[bullseye] + ' <<<' + '\n' # print clue
         elif kind == 'wensleydale':
-            print '\n' + 'Yes sir? ... Oh, see my name\'s Wensleydale, sir.' + '\n'
+            print '\n' + 'Yes? ... Oh, good one, see my name\'s Wensleydale.' + '\n'
         elif kind == 'piss off':
-                print '\n' + 'Very good, sir.' + '\n'
+                print '\n' + 'Very good.' + '\n'
         else:
                 print '\n' + choice(responses) + '\n'
 
