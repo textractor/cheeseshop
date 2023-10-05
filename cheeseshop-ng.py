@@ -1,6 +1,4 @@
-
 def cheeseshop_ng():
-
     """Ask for a type of cheese, get an excuse.
 
     In this game, the customer is not king.
@@ -29,8 +27,8 @@ def cheeseshop_ng():
                'parmesan': 'Needs no introduction, it already has P-R!',
                'manchego': 'Don Quixote approved!',
                'monterey jack': 'You don\'t know jack!'
-    }
-    
+               }
+
     responses = ['Sorry, cat ate it.',
                  'Dried up into a brick. Mortared it into the wall there.',
                  'Not a shred.',
@@ -41,29 +39,35 @@ def cheeseshop_ng():
                  'Blimey, is that really a cheese?!',
                  'Yes, sir, we had a wheel\'s worth! Couple of very large mice bought the lot not 30 minutes ago.',
                  'I believe there\'s a shortage due to the Swiss joining the war.'
-    ]
+                 ]
 
+    cheese_names = list(cheeses.keys())
     kind = 'wensleydale'
-    # Why not use popitem() instead of choice? 
+    # Why not use popitem() instead of choice?
     # Then cheeses can't be repeated,
-    # but then must handle {} situation that may eventually result.    
-    bullseye = choice(cheeses.keys())
-    print '\n' + ">>> Today's Cheese:   " + cheeses[bullseye] + ' <<<' + '\n' # print clue
-    while kind != 'piss off':
-        kind = raw_input('What kind of cheese would you like?' + '\n'
-                "(enter the name of a cheese, in lower case, or enter 'piss off' to exit) ... )" + '\n')
+    # but then must handle {} situation that may eventually result.
+    bullseye = choice(cheese_names)
+    print('\n' + ">>> Today's Cheese:   " + cheeses[
+        bullseye] + ' <<<' + '\n')  # print clue
+    while True:
+        kind = input('What kind of cheese would you like?' + '\n' +
+                     "(enter the name of a cheese, in lower case, or enter "
+                     "'piss off' to exit) ... )" + '\n')
         # print bullseye for debug
         if kind == bullseye:  # The right cheese ....
-            print ('\n' + 'Why, yes, we\'ve got a bit in stock!' + '\n')
-            bullseye = choice(cheeses.keys())  # Choose a new cheese (same cheese may be chosen ... see note above.)
-            print ">>> Today's Cheese:   " + cheeses[bullseye] + ' <<<' + '\n' # print clue
+            print('\n' + 'Why, yes, we\'ve got a bit in stock!' + '\n')
+            # Choose a new cheese (same cheese may be chosen ... see note above.)
+            bullseye = choice(cheese_names)
+            print(">>> Today's Cheese:   " + cheeses[
+                bullseye] + ' <<<' + '\n')  # print clue
         elif kind == 'wensleydale':
-            print '\n' + 'Yes? ... Oh, good one, see my name\'s Wensleydale.' + '\n'
+            print(
+                '\n' + 'Yes? ... Oh, good one, see my name\'s Wensleydale.' + '\n')
         elif kind == 'piss off':
-                print '\n' + 'Very good.' + '\n'
+            print('\n' + 'Very good.' + '\n')
+            break
         else:
-                print '\n' + choice(responses) + '\n'
+            print('\n' + choice(responses) + '\n')
 
 
 cheeseshop_ng()
-
